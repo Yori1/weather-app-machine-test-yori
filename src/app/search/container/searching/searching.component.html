@@ -1,5 +1,8 @@
-<mat-form-field class="example-form-field" appearance="fill">
+<form class="search-form" (ngSubmit)="submit()">
+  <mat-form-field class="example-form-field" appearance="fill">
     <mat-label>Clearable input</mat-label>
-    <input matInput type="text" [(ngModel)]="searchTerm">
-</mat-form-field>
+    <input matInput type="text" [(ngModel)]="searchTerm" name="searchTerm">
+  </mat-form-field>
+</form>
+
   

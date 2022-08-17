@@ -8,9 +8,6 @@ import { OpenWeatherService } from './open.weather.service';
   declarations: [],
   imports: [
     CommonModule
-  ],
-  exports: [
-    OpenWeatherService
   ]
 })
 export class SharedModule { }

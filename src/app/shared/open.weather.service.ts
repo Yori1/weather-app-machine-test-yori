@@ -7,4 +7,7 @@ import { SharedModule } from './shared.module';
 export class OpenWeatherService {
 
   constructor() { }
+
+  GetCurrentWeatherInformation() {
+  }
 }
