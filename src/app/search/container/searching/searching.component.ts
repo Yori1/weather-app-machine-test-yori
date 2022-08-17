@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OpenWeatherService } from 'src/app/shared/open.weather.service';
-import { pipe } from 'rxjs';
+import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -12,17 +12,13 @@ export class SearchingComponent implements OnInit {
 
   searchTerm = "";
 
-  constructor(private openWeatherService: OpenWeatherService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   submit() {
-    this.openWeatherService.getCurrentWeatherInformationByCity(this.searchTerm)
-      .pipe(first())
-      .subscribe(r => {
-        console.log(JSON.stringify(r))
-      });
+    this.router.navigate(["weather-overview/by-city", this.searchTerm]);    
   }
 
 }
