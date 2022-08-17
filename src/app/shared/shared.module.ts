@@ -7,7 +7,7 @@ import { OpenWeatherService } from './open.weather.service';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class SharedModule { }

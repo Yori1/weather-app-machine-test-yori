@@ -16,7 +16,7 @@ export class SearchingComponent implements OnInit {
   }
 
   submit() {
-    this.openWeatherService.GetCurrentWeatherInformation();
+    this.openWeatherService.getCurrentWeatherInformation();
   }
 
 }
