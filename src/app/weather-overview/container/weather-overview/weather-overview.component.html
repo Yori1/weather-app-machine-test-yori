@@ -1,1 +1,9 @@
-<p>weather-overview works!</p>
+<ng-container *ngIf="$basicWeatherReport|async as basicWeatherReport; else loading">
+    <div>Temp: {{basicWeatherReport.main.temp}}</div>
+    <div>{{basicWeatherReport.weather[0].description}}</div>
+</ng-container>
+
+<ng-template #loading>
+    <div>Loading ...</div>
+</ng-template>
+

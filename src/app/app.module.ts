@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchModule } from './search/search.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WeatherOverviewModule } from './weather-overview/weather-overview.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    WeatherOverviewModule,
+    SearchModule,
+
     BrowserModule,
     AppRoutingModule,
     SearchModule,
