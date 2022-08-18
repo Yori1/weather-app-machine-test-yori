@@ -1,7 +1,10 @@
+<h2>Weather App For Machine Test by Yori</h2>
+<div>Please enter a city name in the text field below to see details about the weather in that area</div>
+
 <form class="search-form" (ngSubmit)="submit()">
   <mat-form-field appearance="fill">
     <mat-label>City name</mat-label>
-    <input matInput type="text" [(ngModel)]="searchTerm" name="searchTerm">
+    <input color="primary" matInput type="text" [(ngModel)]="searchTerm" name="searchTerm">
   </mat-form-field>
 </form>
 

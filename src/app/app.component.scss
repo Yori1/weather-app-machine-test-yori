@@ -1,6 +1,14 @@
+@import '~src/app/app.component-theme';
+@import '~@angular/material/theming';
+
 .router-outlet-content {
     display: block;
-    width: 100em;
+    width: 85em;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2em;
+    border-radius: 0.67%;
+    padding: 1em;
+    background-color: mat-color($my-app-primary);
+    
 }
