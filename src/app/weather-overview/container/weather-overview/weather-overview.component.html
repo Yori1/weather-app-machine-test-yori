@@ -1,9 +1,3 @@
-<ng-container *ngIf="$basicWeatherReport|async as basicWeatherReport; else loading">
-    <div class="temperature">{{basicWeatherReport.main.temp}}°C</div>
-    <div>{{basicWeatherReport.weather[0].description}}</div>
-</ng-container>
-
-<ng-template #loading>
-    <div>Loading ...</div>
-</ng-template>
-
+<div class="overview">
+    <weather-weather-basic [$basicWeatherReport]="$basicWeatherReport" [cityName]="cityName"></weather-weather-basic>
+</div>

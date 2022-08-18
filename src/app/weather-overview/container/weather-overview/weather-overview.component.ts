@@ -13,6 +13,7 @@ import { OpenWeatherService } from 'src/app/shared/services/open.weather.service
 export class WeatherOverviewComponent implements OnInit {
 
   $basicWeatherReport!: Observable<BasicWeatherReport>;
+  cityName!: string;
 
   constructor(private route: ActivatedRoute, private openWeatherService: OpenWeatherService) { }
 
@@ -20,7 +21,8 @@ export class WeatherOverviewComponent implements OnInit {
     this.route.params
       .pipe(first())
       .subscribe(params => {
-        this.$basicWeatherReport = this.openWeatherService.getCurrentWeatherInformationByCity(params["city"]);
+        this.cityName = params["city"];
+        this.$basicWeatherReport = this.openWeatherService.getCurrentWeatherInformationByCity(this.cityName);
       });
   }
 

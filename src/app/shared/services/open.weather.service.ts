@@ -21,7 +21,14 @@ export class OpenWeatherService {
   getCurrentWeatherInformationByCity(cityName: string): Observable<BasicWeatherReport> {
     return this.getDirectGeocodingResult(cityName)
       .pipe(switchMap(r => this.getCurrentWeatherInformationByLonLan(r[0].lon, r[0].lat)))
-      .pipe(map(r => ({...r, main: {...r.main, temp: Math.round(r.main.temp * 10) / 10 }})))
+      .pipe(map(r =>
+        (
+          {...r,
+            weather: [{...r.weather[0], icon: `http://openweathermap.org/img/wn/${r.weather[0].icon}@4x.png`}],
+            main: {...r.main, temp: Math.round(r.main.temp * 10) / 10 }
+          }
+        )
+         ))
   }
 
   getDirectGeocodingResult(cityName: string): Observable<DirectGeocodingResult[]> {
