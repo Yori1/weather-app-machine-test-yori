@@ -4,8 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { SearchingComponent } from './container/searching/searching.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -17,8 +17,10 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     MatInputModule,
+    MatButtonModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    MatIconModule
   ]
 })
 export class SearchModule { }

@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { BasicWeatherReport } from 'src/app/shared/models/BasicWeatherReport';
-import { OpenWeatherService } from 'src/app/shared/open.weather.service';
+import { OpenWeatherService } from 'src/app/shared/services/open.weather.service';
 
 @Component({
   selector: 'weather-weather-overview',

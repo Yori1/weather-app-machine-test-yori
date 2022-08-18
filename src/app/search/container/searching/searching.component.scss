@@ -1,8 +1,15 @@
 .search-form {
     display: flex;
-    margin: 1em;
+    margin-top: 0.6em;
+    max-width: 34em;
 }
 
-#search-input {
-    width: 100% !important;
+.form-field {
+    width: 100%;
+}
+
+.mat-raised-button {
+    display: block;
+    height: fit-content !important;
+    margin: 0.5em;
 }
