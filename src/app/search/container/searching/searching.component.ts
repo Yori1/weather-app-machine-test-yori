@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OpenWeatherService } from 'src/app/shared/services/open.weather.service';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OpenWeatherService } from './services/open.weather.service';
+import { WeatherApi } from './services/weather/weather.api';
 
 
 

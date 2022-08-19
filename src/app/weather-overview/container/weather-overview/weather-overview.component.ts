@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
-import { BasicWeatherReport } from 'src/app/shared/models/BasicWeatherReport';
-import { OpenWeatherService } from 'src/app/shared/services/open.weather.service';
+import { BasicWeatherReport } from 'src/app/shared/models/basic.weather.report.ts';
+import { WeatherApi } from 'src/app/shared/services/weather/weather.api';
+import { WeatherFacade } from 'src/app/shared/services/weather/weather.facade';
 
 @Component({
   selector: 'weather-weather-overview',
@@ -12,17 +13,16 @@ import { OpenWeatherService } from 'src/app/shared/services/open.weather.service
 })
 export class WeatherOverviewComponent implements OnInit {
 
-  $basicWeatherReport!: Observable<BasicWeatherReport>;
   cityName!: string;
 
-  constructor(private route: ActivatedRoute, private openWeatherService: OpenWeatherService) { }
+  constructor(private route: ActivatedRoute, public weatherFacade: WeatherFacade) { }
 
   ngOnInit(): void {
     this.route.params
       .pipe(first())
       .subscribe(params => {
         this.cityName = params["city"];
-        this.$basicWeatherReport = this.openWeatherService.getCurrentWeatherInformationByCity(this.cityName);
+        this.weatherFacade.initialize(this.cityName);
       });
   }
 

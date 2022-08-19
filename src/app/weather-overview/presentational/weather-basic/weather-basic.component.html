@@ -1,4 +1,4 @@
-<div class="content" *ngIf="$basicWeatherReport|async as basicWeatherReport; else loading">
+<div class="content">
     <div style="font-size:4.5em; margin: 0.3em; margin-bottom: 0em;">{{cityName}}</div>
     <div style="font-size:1.4em; margin-top: 1.4em;">{{basicWeatherReport.sys.country}}</div>
     <img class="api-image" [src]="basicWeatherReport.weather[0].icon">
@@ -6,7 +6,3 @@
     <div class="text">{{basicWeatherReport.weather[0].description}}</div>
     <div class="text">Min: {{basicWeatherReport.main.temp_min}} Max: {{basicWeatherReport.main.temp_max}}</div>
 </div>
-
-<ng-template #loading>
-    <div>Loading ...</div>
-</ng-template>
